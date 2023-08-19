@@ -99,13 +99,18 @@ const empresas = [
     anoDeCriacao: 1976,
   }
 ];
-
+// USANDO FILTER, MAP E REDUCE
 const empresas2000 = empresas
 .filter(empresas => empresas.anoDeCriacao >= 2000)
+
+const empresaInfos = empresas2000
 .map(empresas => `Nome da empresa: ${empresas.nome}, CEO: ${empresas.CEO}, Capital das duas: ${empresas.valorDeMercado}`)
 
+const somaCapital = empresas2000.reduce((acc, item)=>{
+  return acc + item.valorDeMercado
+}, 0)
 
-console.log(empresas2000)
+console.log( empresaInfos, ` Capital somado das empresas é de ${somaCapital}`)
 
 
 
@@ -144,5 +149,19 @@ console.log('findIndex (index do primeiro par)',  findIndex)
 
 
 // REDUCE
+// Serve para pegar um array e criar uma nova estrutura de dados com base nesse array
+// Criar algo novo
+// Reduzir meu array a algo
+// ELE RECEBE DOIS PARAMETROS, PRIMEIRO A FUNÇÃO NORMAL
+// SEGUNDO QUAL O VALOR INICIAL DESSA NOVA ESTRUTURA DE DADOS QUE QUERO CRIAR A PARTIR DO ARRAY
+
+//                    acumulator, cada informação do array
+const soma = array.reduce((acc, array)=> {
+    return acc + array
+
+}, 0) // valor que vai iniciar
+
+console.log(soma)
+
 
 
